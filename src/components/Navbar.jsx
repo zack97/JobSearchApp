@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/Navbar.css";
 
 const Navbar = ({ onSearch }) => {
@@ -17,21 +17,32 @@ const Navbar = ({ onSearch }) => {
     onSearch(searchQuery, locationQuery); // Notify App about the search change
   };
 
-  const sidebar = document.querySelector(".sidebar");
-  const menuBtn = document.getElementById("menuToggle");
+  useEffect(() => {
+    const sidebar = document.querySelector(".sidebar");
+    const menuBtn = document.getElementById("menuToggle");
 
-  menuBtn.addEventListener("click", () => {
-    sidebar.style.left = "0px";
-  });
+    const handleMenuClick = () => {
+      sidebar.style.left = "0px";
+    };
 
-  document.addEventListener("click", (event) => {
-    const isClickInside =
-      sidebar.contains(event.target) || menuBtn.contains(event.target);
+    const handleClickOutside = (event) => {
+      const isClickInside =
+        sidebar.contains(event.target) || menuBtn.contains(event.target);
 
-    if (!isClickInside) {
-      sidebar.style.left = "-172px";
-    }
-  });
+      if (!isClickInside) {
+        sidebar.style.left = "-172px";
+      }
+    };
+
+    menuBtn.addEventListener("click", handleMenuClick);
+    document.addEventListener("click", handleClickOutside);
+
+    // Cleanup event listeners on component unmount
+    return () => {
+      menuBtn.removeEventListener("click", handleMenuClick);
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="nav">
