@@ -4,7 +4,7 @@ import "./App.css";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import JobCards from "./components/JobCards";
-import Filters from "./components/Filters";
+// import Filters from "./components/Filters";
 import jobList from "./model/JobList";
 import "boxicons/css/boxicons.min.css";
 
@@ -30,7 +30,7 @@ function App() {
         <Navbar onSearch={handleSearch} />
         <div className="main">
           <JobCards jobList={filteredJobs.length ? filteredJobs : jobList} />
-          <Filters />
+          {/* <Filters /> */}
         </div>
       </div>
     </div>
