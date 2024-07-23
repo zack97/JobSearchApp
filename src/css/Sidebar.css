@@ -1,3 +1,6 @@
+.a-white {
+  color: white;
+}
 .sidebar {
   flex: 1;
   height: 100vh;

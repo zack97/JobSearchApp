@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Sidebar.css";
+import zackimage from "../assets/zackimagenoir.jpg";
 
 const Sidebar = () => {
   return (
@@ -29,28 +30,16 @@ const Sidebar = () => {
       </div>
       <div className="side-profile">
         <div className="info">
-          <img src="assets/profile-1.png" alt="profile" />
-          <a href="#">Alex.Talent</a>
-          <p>Graphic Designer</p>
+          <img src={zackimage} alt="profile" />
+          <a href="#">ZackProg</a>
+          <p>Software Developer</p>
         </div>
-        <div className="skills">
-          <h5>Skills and Expertise</h5>
-          <div className="skill-tags">
-            <div className="item">
-              <p>Graphic Designer</p>
-            </div>
-            <div className="item">
-              <p>Illustrator</p>
-            </div>
-            <div className="item">
-              <p>Photoshop</p>
-            </div>
-            <div className="item">
-              <p>HTML/CSS</p>
-            </div>
-          </div>
-        </div>
-        <button>View Profile</button>
+
+        <button>
+          <a href="https://zackportfolio.netlify.app/" className="a-white">
+            View Profile
+          </a>
+        </button>
       </div>
     </div>
   );

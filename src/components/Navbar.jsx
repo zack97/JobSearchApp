@@ -68,16 +68,6 @@ const Navbar = ({ onSearch }) => {
         />
       </div>
       <button onClick={handleSearchClick}>Search</button>
-      <i className="bx bx-bell"></i>
-      <div className="user-info">
-        <img src="assets/profile-1.png" alt="user" />
-        <div>
-          <a href="#">
-            Reza.UI <i className="bx bx-chevron-down"></i>
-          </a>
-          <p>Reza@Test.com</p>
-        </div>
-      </div>
     </div>
   );
 };
