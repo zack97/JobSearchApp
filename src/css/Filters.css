@@ -95,6 +95,10 @@
     gap: 30px;
   }
 
+  .filters {
+    position: relative;
+  }
+
   .container .main .filters .header {
     width: 100%;
   }
